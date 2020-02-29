@@ -1,6 +1,7 @@
 package org.overlake.criminalintent;
 
 import java.util.Date;
+import java.util.Random;
 import java.util.UUID;
 
 public class Crime {
@@ -9,11 +10,22 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private boolean mRequiresPolice;
 
     public Crime()
     {
         mId = UUID.randomUUID();
         mDate = new Date();
+    }
+
+    public void setPolice(boolean police)
+    {
+        mRequiresPolice = police;
+    }
+
+    public boolean doesRequirePolice()
+    {
+        return mRequiresPolice;
     }
 
     public UUID getId() {
